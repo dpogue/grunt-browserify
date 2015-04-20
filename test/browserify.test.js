@@ -257,7 +257,7 @@ describe('grunt-browserify-runner', function () {
       it('passes the options hash along with the transform fn', function (done) {
         var transforms = [[function () {}, {}]];
         runner.run([], dest, {transform: transforms}, function () {
-          assert.ok(b().transform.calledWith(transforms[0][1], transforms[0][0]));
+          assert.ok(b().transform.calledWith(transforms[0][0], transforms[0][1]));
           done();
         });
       });
